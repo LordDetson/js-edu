@@ -1,3 +1,5 @@
+const knowsProgrammingTrue = 800;
+const knowsProgrammingFalse = 1300;
 /**
  * @param preferences - target student focus
  * @param knowsProgramming - if student can do programming and know basics
@@ -5,10 +7,10 @@
  * @returns number of weeks needed for finish education
  */
 module.exports = function getTimeForEducation(
-    focus = 'family', 
+    focus = 'family',
     knowsProgramming = true,
     config = {family: 4}
-    ) {
-      return 0;
-  };
+) {
+    return Math.ceil((knowsProgramming ? knowsProgrammingTrue : knowsProgrammingFalse) / config[focus]);
+};
   
